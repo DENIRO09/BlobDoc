@@ -1,0 +1,22 @@
+﻿@model List<AppDev3A.Models.ViewModelBlobs>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <h1>Upload To Azure Blob Storage</h1>
+</div>
+<div>
+    <a href="@Href("~/Blob/UploadView")">Upload Image</a>
+</div>
+<br />
+<br />
+<table class="table table-bordered">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><a href="@item.URI" target="_blank">@item.Name</a><br /></td>
+            <td> @Html.ActionLink("Delete", "Delete", new { id = item.Name })</td>
+        </tr>
+    }
+</table>
